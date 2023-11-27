@@ -1,4 +1,4 @@
-package com.henriquebarucco.Forum
+package com.henriquebarucco.forum
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
