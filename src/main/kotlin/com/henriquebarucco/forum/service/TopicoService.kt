@@ -2,6 +2,7 @@ package com.henriquebarucco.forum.service
 
 import com.henriquebarucco.forum.dto.AtualizacaoTopicoForm
 import com.henriquebarucco.forum.dto.NovoTopicoForm
+import com.henriquebarucco.forum.dto.TopicoPorCategoriaDto
 import com.henriquebarucco.forum.dto.TopicoView
 import com.henriquebarucco.forum.exception.NotFoundException
 import com.henriquebarucco.forum.mapper.TopicoFormMapper
@@ -56,5 +57,9 @@ class TopicoService(
 
     fun deletar(id: Long) {
         repository.deleteById(id)
+    }
+
+    fun relatorio(): List<TopicoPorCategoriaDto> {
+        return repository.relatorio()
     }
 }
