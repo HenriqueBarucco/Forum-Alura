@@ -31,7 +31,7 @@ class JWTUtil(
 
     fun isValid(jwt: String?): Boolean {
         return try {
-            val claims = Jwts.parser().setSigningKey(secret.toByteArray()).build().parseSignedClaims(jwt)
+            Jwts.parser().setSigningKey(secret.toByteArray()).build().parseSignedClaims(jwt)
             true
         } catch (e: Exception) {
             false
