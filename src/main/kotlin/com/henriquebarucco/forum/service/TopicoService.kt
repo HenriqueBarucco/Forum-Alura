@@ -7,12 +7,11 @@ import com.henriquebarucco.forum.dto.TopicoView
 import com.henriquebarucco.forum.exception.NotFoundException
 import com.henriquebarucco.forum.mapper.TopicoFormMapper
 import com.henriquebarucco.forum.mapper.TopicoViewMapper
-import com.henriquebarucco.forum.model.Topico
 import com.henriquebarucco.forum.repository.TopicoRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
-import java.util.*
+import java.time.LocalDate
 
 @Service
 class TopicoService(
@@ -51,6 +50,7 @@ class TopicoService(
 
         topico.titulo = form.titulo
         topico.mensagem = form.mensagem
+        topico.dataAlteracao = LocalDate.now()
 
         return topicoViewMapper.map(topico)
     }
