@@ -7,6 +7,7 @@ import com.henriquebarucco.forum.dto.TopicoView
 import com.henriquebarucco.forum.exception.NotFoundException
 import com.henriquebarucco.forum.mapper.TopicoFormMapper
 import com.henriquebarucco.forum.mapper.TopicoViewMapper
+import com.henriquebarucco.forum.model.Topico
 import com.henriquebarucco.forum.repository.TopicoRepository
 import org.springframework.cache.annotation.CacheEvict
 import org.springframework.cache.annotation.Cacheable
@@ -38,6 +39,10 @@ class TopicoService(
         val topico = repository.findById(id).orElseThrow{NotFoundException(notFoundMessage)}
 
         return topicoViewMapper.map(topico)
+    }
+
+    fun buscarTopicoPorId(id: Long): Topico {
+        return repository.findById(id).orElseThrow{NotFoundException(notFoundMessage)}
     }
 
     @CacheEvict(value = ["topicos"], allEntries = true)

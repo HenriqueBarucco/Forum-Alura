@@ -29,6 +29,7 @@ class SecurityConfiguration(
             csrf { disable() }
             authorizeRequests {
                 authorize("/topicos", hasAuthority("LEITURA_ESCRITA"))
+                authorize("/respostas", hasAuthority("LEITURA_ESCRITA"))
                 authorize("/swagger-ui/**", permitAll)
                 authorize("/v3/api-docs/**", permitAll)
                 authorize(HttpMethod.POST, "/login", permitAll)
