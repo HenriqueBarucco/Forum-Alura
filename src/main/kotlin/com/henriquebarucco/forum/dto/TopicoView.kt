@@ -1,6 +1,7 @@
 package com.henriquebarucco.forum.dto
 
 import com.henriquebarucco.forum.model.StatusTopico
+import java.io.Serializable
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -11,6 +12,6 @@ data class TopicoView(
     val status: StatusTopico,
     val dataCriacao: LocalDateTime,
     val dataAlteracao: LocalDate?,
-) {
+): Serializable {
 
 }
