@@ -1,6 +1,5 @@
 package com.henriquebarucco.forum.controller
 
-import com.henriquebarucco.forum.dto.TopicoPorCategoriaDto
 import com.henriquebarucco.forum.service.TopicoService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
