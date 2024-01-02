@@ -31,7 +31,7 @@ abstract class DatabaseContainerConfiguration {
             registry.add("spring.datasource.username", mysqlContainer::getUsername)
             registry.add("spring.datasource.password", mysqlContainer::getPassword)
 
-            registry.add("spring.data.redis.host", redisContainer::getContainerIpAddress)
+            registry.add("spring.data.redis.host", redisContainer::getHost)
             registry.add("spring.data.redis.port", redisContainer::getFirstMappedPort)
         }
     }
